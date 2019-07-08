@@ -14,10 +14,6 @@ ENV HELM_VERSION="v2.14.1"
 # https://github.com/aws/aws-cli/
 ENV AWS_CLI_VERSION="1.16.193"
 
-ENV AWS_ACCESS_KEY_ID=""
-ENV AWS_SECRET_ACCESS_KEY=""
-ENV AWS_DEFAULT_REGION=""
-
 RUN apk add --no-cache \
       ca-certificates \
       bash \
@@ -34,7 +30,9 @@ RUN apk add --no-cache \
     && chmod +x /usr/local/bin/kubectl \
     && wget -q https://storage.googleapis.com/kubernetes-helm/helm-${HELM_VERSION}-linux-amd64.tar.gz -O - | tar -xzO linux-amd64/helm > /usr/local/bin/helm \
     && chmod +x /usr/local/bin/helm \
-    && apk --purge del py3-pip \
+    && apk --purge del \
+         py3-pip \
+         build-base \
     && rm -rf /var/cache/apk/*
 
 COPY ./configure.sh /opt/
