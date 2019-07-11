@@ -9,10 +9,10 @@ LABEL org.label-schema.name="aws-helm-kubectl" \
 ENV KUBE_LATEST_VERSION="v1.15.0"
 # Note: Latest version of helm may be found at:
 # https://github.com/kubernetes/helm/releases
-ENV HELM_VERSION="v2.14.1"
+ENV HELM_VERSION="v2.14.2"
 # Note: Latest version of AWS CLI may be found at:
 # https://github.com/aws/aws-cli/
-ENV AWS_CLI_VERSION="1.16.193"
+ENV AWS_CLI_VERSION="1.16.196"
 
 RUN apk add --no-cache \
       ca-certificates \

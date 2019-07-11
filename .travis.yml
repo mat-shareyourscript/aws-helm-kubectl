@@ -1,6 +1,6 @@
 env:
   DOCKER_IMAGE=matshareyourscript/aws-helm-kubectl
-  DOCKER_TAG=0.0.1
+  DOCKER_TAG=1.1.0
 
 services:
   - docker

@@ -9,7 +9,8 @@
 
 Tags
 
-* [1.0.0](http://github.com/mat-shareyourscript/aws-helm-kubetcl/releases/tag/1.0.0) - aws cli v1.16.193, helm v2.14.1, kubectl v1.15.0, alpine 3.10
+* [0.0.1](http://github.com/mat-shareyourscript/aws-helm-kubetcl/releases/tag/1.0.0) - aws cli v1.16.193, helm v2.14.1, kubectl v1.15.0, alpine 3.10
+* [1.1.0](http://github.com/mat-shareyourscript/aws-helm-kubetcl/releases/tag/1.0.0) - aws cli v1.16.196, helm v2.14.2, kubectl v1.15.0, alpine 3.10
 
 ## Run
 
