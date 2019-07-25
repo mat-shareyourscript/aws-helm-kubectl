@@ -22,12 +22,13 @@ RUN apk add --no-cache \
       ca-certificates \
       git \
       curl \
+      bash \
       python3 \
       python3-dev \
       py3-pip \
       build-base \
-    && pip3 install --upgrade awscli==${AWS_CLI_VERSION} \
-    && pip3 install --upgrade boto3 \
+    && pip3 install --upgrade --no-cache-dir awscli==${AWS_CLI_VERSION} \
+    && pip3 install --upgrade --no-cache-dir boto3 \
     && wget -q https://storage.googleapis.com/kubernetes-release/release/${KUBE_LATEST_VERSION}/bin/linux/amd64/kubectl -O /usr/local/bin/kubectl \
     && chmod +x /usr/local/bin/kubectl \
     && wget -q https://storage.googleapis.com/kubernetes-helm/helm-${HELM_VERSION}-linux-amd64.tar.gz -O - | tar -xzO linux-amd64/helm > /usr/local/bin/helm \

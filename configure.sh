@@ -10,6 +10,3 @@ if [[ -n ${AWS_ACCESS_KEY_ID} ]] && [[ -n ${AWS_SECRET_ACCESS_KEY} ]] && [[ -n $
   export PATH=/root/.local/bin:$PATH
   echo 'export PATH=/root/.local/bin:$PATH' >> /etc/profile
 fi
-
-# Aliases
-alias acm='python3 /opt/acm.py'
