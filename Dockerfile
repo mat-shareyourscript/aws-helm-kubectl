@@ -12,20 +12,22 @@ ENV KUBE_LATEST_VERSION="v1.15.0"
 ENV HELM_VERSION="v2.14.2"
 # Note: Latest version of AWS CLI may be found at:
 # https://github.com/aws/aws-cli/
-ENV AWS_CLI_VERSION="1.16.196"
+ENV AWS_CLI_VERSION="1.16.205"
+
+COPY ./configure.sh /opt/
+
+COPY ./acm /usr/local/bin/
 
 RUN apk add --no-cache \
       ca-certificates \
-      bash \
       git \
-      openssh \
       curl \
-      less \
       python3 \
       python3-dev \
       py3-pip \
       build-base \
     && pip3 install --upgrade awscli==${AWS_CLI_VERSION} \
+    && pip3 install --upgrade boto3 \
     && wget -q https://storage.googleapis.com/kubernetes-release/release/${KUBE_LATEST_VERSION}/bin/linux/amd64/kubectl -O /usr/local/bin/kubectl \
     && chmod +x /usr/local/bin/kubectl \
     && wget -q https://storage.googleapis.com/kubernetes-helm/helm-${HELM_VERSION}-linux-amd64.tar.gz -O - | tar -xzO linux-amd64/helm > /usr/local/bin/helm \
@@ -33,13 +35,11 @@ RUN apk add --no-cache \
     && apk --purge del \
          py3-pip \
          build-base \
-    && rm -rf /var/cache/apk/*
-
-COPY ./configure.sh /opt/
-
-RUN chmod 755 /opt/configure.sh \
+    && rm -rf /var/cache/apk/* \
+    && chmod 755 /usr/local/bin/acm \
+    && chmod 755 /opt/configure.sh \
     && /opt/configure.sh
 
-WORKDIR /config
+WORKDIR /
 
-CMD ["bash"]
+CMD ["sh"]

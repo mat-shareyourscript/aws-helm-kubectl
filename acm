@@ -1,0 +1,12 @@
+#!/usr/bin/env python3
+
+import sys, json
+import boto3
+
+client = boto3.client('acm')
+response = client.list_certificates()
+
+for arg in sys.argv:
+  search = next((item for item in response['CertificateSummaryList'] if item['DomainName'] == arg), None)
+  if search:
+    print(search['CertificateArn'])
