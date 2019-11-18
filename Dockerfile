@@ -6,10 +6,10 @@ LABEL org.label-schema.name="aws-helm-kubectl" \
 
 # Note: Latest version of kubectl may be found at:
 # https://aur.archlinux.org/packages/kubectl-bin/
-ENV KUBE_LATEST_VERSION="v1.16.0"
+ENV KUBE_LATEST_VERSION="v1.16.3"
 # Note: Latest version of helm may be found at:
 # https://github.com/kubernetes/helm/releases
-ENV HELM_VERSION="v2.15.2"
+ENV HELM_VERSION="v3.0.0"
 # Note: Latest version of AWS CLI may be found at:
 # https://github.com/aws/aws-cli/
 ENV AWS_CLI_VERSION="1.16.283"
