@@ -1,7 +1,7 @@
 # AWS cli, Helm and kubectl
 
-[![](https://images.microbadger.com/badges/image/matshareyourscript/aws-helm-kubectl.svg)](https://microbadger.com/images/matshareyourscript/aws-helm-kubectl "Get your own image badge on microbadger.com")
-[![](https://images.microbadger.com/badges/version/matshareyourscript/aws-helm-kubectl.svg)](https://microbadger.com/images/matshareyourscript/aws-helm-kubectl "Get your own version badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/matshareyourscript/aws-helm-kubectl.svg)](https://microbadger.com/images/matshareyourscript/aws-helm-kubectl)
+[![](https://images.microbadger.com/badges/version/matshareyourscript/aws-helm-kubectl.svg)](https://microbadger.com/images/matshareyourscript/aws-helm-kubectl)
 [![Build Status](https://travis-ci.org/mat-shareyourscript/aws-helm-kubectl.svg?branch=master)](https://travis-ci.org/mat-shareyourscript/aws-helm-kubectl)
 [![Docker Stars](https://img.shields.io/docker/stars/matshareyourscript/aws-helm-kubectl.svg?style=flat)](https://hub.docker.com/r/matshareyourscript/aws-helm-kubectl/)
 [![Docker Automated build](https://img.shields.io/docker/automated/matshareyourscript/aws-helm-kubectl.svg?style=flat)]()
@@ -12,6 +12,7 @@
 * [0.0.1](http://github.com/mat-shareyourscript/aws-helm-kubetcl/releases/tag/1.0.0) - aws cli v1.16.193, helm v2.14.1, kubectl v1.15.0, alpine 3.10
 * [1.1.0](http://github.com/mat-shareyourscript/aws-helm-kubetcl/releases/tag/1.1.0) - aws cli v1.16.196, helm v2.14.2, kubectl v1.15.0, alpine 3.10
 * [1.2.0](http://github.com/mat-shareyourscript/aws-helm-kubetcl/releases/tag/1.2.0) - aws cli v1.16.205, helm v2.14.2, kubectl v1.15.0, alpine 3.10
+* [1.3.0](http://github.com/mat-shareyourscript/aws-helm-kubetcl/releases/tag/1.2.0) - aws cli v1.16.283, helm v2.15.2, kubectl v1.16.0, alpine 3.10
 
 ## How to use this image
 
