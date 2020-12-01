@@ -28,7 +28,10 @@ RUN apk add --no-cache \
       py3-pip \
       build-base \
       jq \
-    && pip3 install --upgrade --no-cache-dir awscli==${AWS_CLI_VERSION} \
+      unzip \
+    && curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-${AWS_CLI_VERSION}.zip" -o "awscliv2.zip" \
+    && unzip awscliv2.zip \
+    && ./aws/install -i /usr/local/aws-cli -b /usr/local/bin \
     && pip3 install --upgrade --no-cache-dir boto3 \
     && wget -q https://storage.googleapis.com/kubernetes-release/release/${KUBE_LATEST_VERSION}/bin/linux/amd64/kubectl -O /usr/local/bin/kubectl \
     && chmod +x /usr/local/bin/kubectl \
