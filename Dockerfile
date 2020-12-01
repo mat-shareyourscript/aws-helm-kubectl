@@ -9,7 +9,7 @@ LABEL org.label-schema.name="aws-helm-kubectl" \
 ENV KUBE_LATEST_VERSION="v1.18.6"
 # Note: Latest version of helm may be found at:
 # https://github.com/kubernetes/helm/releases
-ENV HELM_VERSION="v3.4.1"
+ENV HELM_VERSION="v3.0.2"
 # Note: Latest version of AWS CLI may be found at:
 # https://github.com/aws/aws-cli/releases
 ENV AWS_CLI_VERSION="1.18.186"
