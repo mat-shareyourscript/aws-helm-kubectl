@@ -12,7 +12,7 @@ ENV KUBE_LATEST_VERSION="v1.18.6"
 ENV HELM_VERSION="v3.4.1"
 # Note: Latest version of AWS CLI may be found at:
 # https://github.com/aws/aws-cli/releases
-ENV AWS_CLI_VERSION="2.1.5"
+ENV AWS_CLI_VERSION="1.18.186"
 
 COPY ./configure.sh /opt/
 
@@ -28,10 +28,7 @@ RUN apk add --no-cache \
       py3-pip \
       build-base \
       jq \
-      unzip \
-    && curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-${AWS_CLI_VERSION}.zip" -o "awscliv2.zip" \
-    && unzip awscliv2.zip \
-    && ./aws/install -i /usr/local/aws-cli -b /usr/local/bin \
+    && pip3 install --upgrade --no-cache-dir awscli==${AWS_CLI_VERSION} \
     && pip3 install --upgrade --no-cache-dir boto3 \
     && wget -q https://storage.googleapis.com/kubernetes-release/release/${KUBE_LATEST_VERSION}/bin/linux/amd64/kubectl -O /usr/local/bin/kubectl \
     && chmod +x /usr/local/bin/kubectl \
