@@ -16,7 +16,7 @@
 * [2.0.0](http://github.com/mat-shareyourscript/aws-helm-kubetcl/releases/tag/2.0.0) - aws cli v1.16.283, helm v3.0.0, kubectl v1.16.3, alpine 3.10
 * [2.1.0](http://github.com/mat-shareyourscript/aws-helm-kubetcl/releases/tag/2.1.0) - aws cli v1.17.2, helm v3.0.2, kubectl v1.17.9, alpine 3.10
 * [2.1.1](http://github.com/mat-shareyourscript/aws-helm-kubetcl/releases/tag/2.1.0) - aws cli v1.18.117, helm v3.0.2, kubectl v1.17.9, alpine 3.10
-* [2.2.0](http://github.com/mat-shareyourscript/aws-helm-kubetcl/releases/tag/2.1.0) - aws cli v2.1.5, helm v3.4.1, kubectl v1.18.6, alpine 3.10
+* [2.2.0](http://github.com/mat-shareyourscript/aws-helm-kubetcl/releases/tag/2.2.0) - aws cli v2.1.5, helm v3.4.1, kubectl v1.18.6, alpine 3.10
 
 ## How to use this image
 
