@@ -37,11 +37,12 @@ RUN apk add --no-cache \
     && apk --purge del \
          py3-pip \
          build-base \
-    && rm -rf /var/cache/apk/* \
-    && chmod 755 /usr/local/bin/acm \
-    && chmod 755 /opt/configure.sh \
-    && /opt/configure.sh
+    && rm -rf /var/cache/apk/*
+
+RUN chmod 755 /usr/local/bin/acm
+RUN chmod 755 /opt/configure.sh
+RUN /bin/bash /opt/configure.sh
 
 WORKDIR /
 
-CMD ["sh"]
+CMD ["/bin/bash"]
