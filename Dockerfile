@@ -6,10 +6,10 @@ LABEL org.label-schema.name="aws-helm-kubectl" \
 
 # Note: Latest version of kubectl may be found at:
 # https://aur.archlinux.org/packages/kubectl-bin/
-ENV KUBE_LATEST_VERSION="v1.18.6"
+ENV KUBE_LATEST_VERSION="v1.20.2"
 # Note: Latest version of helm may be found at:
 # https://github.com/kubernetes/helm/releases
-ENV HELM_VERSION="v3.0.2"
+ENV HELM_VERSION="v3.5.2"
 # Note: Latest version of AWS CLI may be found at:
 # https://github.com/aws/aws-cli/releases
 ENV AWS_CLI_VERSION="1.18.186"
@@ -34,15 +34,17 @@ RUN apk add --no-cache \
     && chmod +x /usr/local/bin/kubectl \
     && wget -q https://get.helm.sh/helm-${HELM_VERSION}-linux-amd64.tar.gz -O - | tar -xzO linux-amd64/helm > /usr/local/bin/helm \
     && chmod +x /usr/local/bin/helm \
+    && curl -o aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.18.9/2020-11-02/bin/linux/amd64/aws-iam-authenticator \
+    && chmod +x ./aws-iam-authenticator \
+    && cp ./aws-iam-authenticator /usr/local/bin/ \
     && apk --purge del \
          py3-pip \
          build-base \
-    && rm -rf /var/cache/apk/*
-
-RUN chmod 755 /usr/local/bin/acm
-RUN chmod 755 /opt/configure.sh
-RUN /bin/bash /opt/configure.sh
+    && rm -rf /var/cache/apk/* \
+    && chmod 755 /usr/local/bin/acm \
+    && chmod 755 /opt/configure.sh \
+    && /opt/configure.sh
 
 WORKDIR /
 
-CMD ["/bin/bash"]
+CMD ["sh"]
